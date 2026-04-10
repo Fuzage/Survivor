@@ -26,6 +26,9 @@ public class Bullet : MonoBehaviour
         moveSpeed = speedValue;
         maxRange = rangeValue;
         startPosition = rb.position;
+
+        float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, angle);
     }
 
     private void FixedUpdate()

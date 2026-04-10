@@ -3,6 +3,7 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] private int maxHealth = 3;
+    [SerializeField] private GameObject expOrbPrefab;
 
     private int currentHealth;
 
@@ -23,6 +24,11 @@ public class EnemyHealth : MonoBehaviour
 
     private void Die()
     {
+        if (expOrbPrefab != null)
+        {
+            Instantiate(expOrbPrefab, transform.position, Quaternion.identity);
+        }
+
         Destroy(gameObject);
     }
 }

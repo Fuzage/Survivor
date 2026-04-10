@@ -41,4 +41,15 @@ public class EnemyController : MonoBehaviour
         Vector2 direction = ((Vector2)player.position - rb.position).normalized;
         rb.linearVelocity = direction * moveSpeed;
     }
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            PlayerHealth player = other.GetComponent<PlayerHealth>();
+            if (player != null)
+            {
+                player.TakeDamage(1);
+            }
+        }
+    }
 }

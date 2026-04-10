@@ -184,3 +184,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   maxHealth: 3
+  expOrbPrefab: {fileID: 615795033580822344, guid: d499943362eced744a19a02877fd03dc, type: 3}

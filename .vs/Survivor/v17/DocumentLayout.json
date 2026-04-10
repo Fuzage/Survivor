@@ -3,32 +3,56 @@
   "WorkspaceRootPath": "D:\\UnityProjects\\Survivor\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{34467AA8-DCBB-B786-2DE7-70905B7AEE8C}|Assembly-CSharp.csproj|D:\\UnityProjects\\Survivor\\assets\\scripts\\playershooter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{34467AA8-DCBB-B786-2DE7-70905B7AEE8C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playershooter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{34467AA8-DCBB-B786-2DE7-70905B7AEE8C}|Assembly-CSharp.csproj|d:\\unityprojects\\survivor\\assets\\scripts\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{34467AA8-DCBB-B786-2DE7-70905B7AEE8C}|Assembly-CSharp.csproj|D:\\UnityProjects\\Survivor\\assets\\scripts\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{34467AA8-DCBB-B786-2DE7-70905B7AEE8C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{34467AA8-DCBB-B786-2DE7-70905B7AEE8C}|Assembly-CSharp.csproj|d:\\unityprojects\\survivor\\assets\\scripts\\enemyspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{34467AA8-DCBB-B786-2DE7-70905B7AEE8C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemyspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{34467AA8-DCBB-B786-2DE7-70905B7AEE8C}|Assembly-CSharp.csproj|D:\\UnityProjects\\Survivor\\assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34467AA8-DCBB-B786-2DE7-70905B7AEE8C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{34467AA8-DCBB-B786-2DE7-70905B7AEE8C}|Assembly-CSharp.csproj|D:\\UnityProjects\\Survivor\\assets\\scripts\\enemyhealth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{34467AA8-DCBB-B786-2DE7-70905B7AEE8C}|Assembly-CSharp.csproj|D:\\UnityProjects\\Survivor\\assets\\scripts\\playerhealth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34467AA8-DCBB-B786-2DE7-70905B7AEE8C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playerhealth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34467AA8-DCBB-B786-2DE7-70905B7AEE8C}|Assembly-CSharp.csproj|D:\\UnityProjects\\Survivor\\assets\\scripts\\healthbarui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34467AA8-DCBB-B786-2DE7-70905B7AEE8C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\healthbarui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34467AA8-DCBB-B786-2DE7-70905B7AEE8C}|Assembly-CSharp.csproj|D:\\UnityProjects\\Survivor\\assets\\scripts\\playerexperience.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34467AA8-DCBB-B786-2DE7-70905B7AEE8C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playerexperience.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34467AA8-DCBB-B786-2DE7-70905B7AEE8C}|Assembly-CSharp.csproj|d:\\unityprojects\\survivor\\assets\\scripts\\experienceui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34467AA8-DCBB-B786-2DE7-70905B7AEE8C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\experienceui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34467AA8-DCBB-B786-2DE7-70905B7AEE8C}|Assembly-CSharp.csproj|d:\\unityprojects\\survivor\\assets\\scripts\\enemyhealth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{34467AA8-DCBB-B786-2DE7-70905B7AEE8C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemyhealth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{34467AA8-DCBB-B786-2DE7-70905B7AEE8C}|Assembly-CSharp.csproj|D:\\UnityProjects\\Survivor\\assets\\scripts\\camerafollow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{34467AA8-DCBB-B786-2DE7-70905B7AEE8C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\camerafollow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{34467AA8-DCBB-B786-2DE7-70905B7AEE8C}|Assembly-CSharp.csproj|D:\\UnityProjects\\Survivor\\assets\\scripts\\enemyspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34467AA8-DCBB-B786-2DE7-70905B7AEE8C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemyspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34467AA8-DCBB-B786-2DE7-70905B7AEE8C}|Assembly-CSharp.csproj|D:\\UnityProjects\\Survivor\\assets\\scripts\\playerpickup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34467AA8-DCBB-B786-2DE7-70905B7AEE8C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playerpickup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34467AA8-DCBB-B786-2DE7-70905B7AEE8C}|Assembly-CSharp.csproj|D:\\UnityProjects\\Survivor\\assets\\scripts\\exporb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34467AA8-DCBB-B786-2DE7-70905B7AEE8C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\exporb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{34467AA8-DCBB-B786-2DE7-70905B7AEE8C}|Assembly-CSharp.csproj|D:\\UnityProjects\\Survivor\\assets\\scripts\\enemycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{34467AA8-DCBB-B786-2DE7-70905B7AEE8C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{34467AA8-DCBB-B786-2DE7-70905B7AEE8C}|Assembly-CSharp.csproj|D:\\UnityProjects\\Survivor\\assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{34467AA8-DCBB-B786-2DE7-70905B7AEE8C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{34467AA8-DCBB-B786-2DE7-70905B7AEE8C}|Assembly-CSharp.csproj|D:\\UnityProjects\\Survivor\\assets\\scripts\\playershooter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34467AA8-DCBB-B786-2DE7-70905B7AEE8C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playershooter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34467AA8-DCBB-B786-2DE7-70905B7AEE8C}|Assembly-CSharp.csproj|D:\\UnityProjects\\Survivor\\assets\\scripts\\camerafollow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34467AA8-DCBB-B786-2DE7-70905B7AEE8C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\camerafollow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,11 +62,75 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ExperienceUI.cs",
+              "DocumentMoniker": "D:\\UnityProjects\\Survivor\\Assets\\Scripts\\ExperienceUI.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ExperienceUI.cs",
+              "ToolTip": "D:\\UnityProjects\\Survivor\\Assets\\Scripts\\ExperienceUI.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ExperienceUI.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-10T21:48:11.232Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PlayerExperience.cs",
+              "DocumentMoniker": "D:\\UnityProjects\\Survivor\\Assets\\Scripts\\PlayerExperience.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerExperience.cs",
+              "ToolTip": "D:\\UnityProjects\\Survivor\\Assets\\Scripts\\PlayerExperience.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PlayerExperience.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAIwC4AAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-10T21:12:23.212Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PlayerPickup.cs",
+              "DocumentMoniker": "D:\\UnityProjects\\Survivor\\Assets\\Scripts\\PlayerPickup.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerPickup.cs",
+              "ToolTip": "D:\\UnityProjects\\Survivor\\Assets\\Scripts\\PlayerPickup.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PlayerPickup.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-10T21:10:11.393Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HealthBarUI.cs",
+              "DocumentMoniker": "D:\\UnityProjects\\Survivor\\Assets\\Scripts\\HealthBarUI.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\HealthBarUI.cs",
+              "ToolTip": "D:\\UnityProjects\\Survivor\\Assets\\Scripts\\HealthBarUI.cs",
+              "RelativeToolTip": "Assets\\Scripts\\HealthBarUI.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-10T20:47:39.015Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "PlayerHealth.cs",
+              "DocumentMoniker": "D:\\UnityProjects\\Survivor\\Assets\\Scripts\\PlayerHealth.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerHealth.cs",
+              "ToolTip": "D:\\UnityProjects\\Survivor\\Assets\\Scripts\\PlayerHealth.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PlayerHealth.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-10T20:39:13.119Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "EnemySpawner.cs",
               "DocumentMoniker": "D:\\UnityProjects\\Survivor\\Assets\\Scripts\\EnemySpawner.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\EnemySpawner.cs",
@@ -50,50 +138,74 @@
               "RelativeToolTip": "Assets\\Scripts\\EnemySpawner.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-20T23:12:52.722Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-20T23:12:52.722Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "EnemyHealth.cs",
               "DocumentMoniker": "D:\\UnityProjects\\Survivor\\Assets\\Scripts\\EnemyHealth.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\EnemyHealth.cs",
               "ToolTip": "D:\\UnityProjects\\Survivor\\Assets\\Scripts\\EnemyHealth.cs",
               "RelativeToolTip": "Assets\\Scripts\\EnemyHealth.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAIwCEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-20T23:05:54.041Z"
+              "WhenOpened": "2026-03-20T23:05:54.041Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 11,
               "Title": "PlayerShooter.cs",
               "DocumentMoniker": "D:\\UnityProjects\\Survivor\\Assets\\Scripts\\PlayerShooter.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerShooter.cs",
               "ToolTip": "D:\\UnityProjects\\Survivor\\Assets\\Scripts\\PlayerShooter.cs",
               "RelativeToolTip": "Assets\\Scripts\\PlayerShooter.cs",
-              "ViewState": "AgIAADUAAAAAAAAAAAAQwBcAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAADUAAAAAAAAAAAAQwEkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-20T22:58:22.267Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-20T22:58:22.267Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Bullet.cs",
               "DocumentMoniker": "D:\\UnityProjects\\Survivor\\Assets\\Scripts\\Bullet.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Bullet.cs",
               "ToolTip": "D:\\UnityProjects\\Survivor\\Assets\\Scripts\\Bullet.cs",
               "RelativeToolTip": "Assets\\Scripts\\Bullet.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADUAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAAAwB8AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-20T22:56:28.919Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
+              "Title": "PlayerController.cs",
+              "DocumentMoniker": "D:\\UnityProjects\\Survivor\\Assets\\Scripts\\PlayerController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerController.cs",
+              "ToolTip": "D:\\UnityProjects\\Survivor\\Assets\\Scripts\\PlayerController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PlayerController.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAcwDMAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T22:13:05.092Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ExpOrb.cs",
+              "DocumentMoniker": "D:\\UnityProjects\\Survivor\\Assets\\Scripts\\ExpOrb.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ExpOrb.cs",
+              "ToolTip": "D:\\UnityProjects\\Survivor\\Assets\\Scripts\\ExpOrb.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ExpOrb.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-10T21:10:52.769Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "CameraFollow.cs",
               "DocumentMoniker": "D:\\UnityProjects\\Survivor\\Assets\\Scripts\\CameraFollow.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\CameraFollow.cs",
@@ -105,27 +217,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 10,
               "Title": "EnemyController.cs",
               "DocumentMoniker": "D:\\UnityProjects\\Survivor\\Assets\\Scripts\\EnemyController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\EnemyController.cs",
               "ToolTip": "D:\\UnityProjects\\Survivor\\Assets\\Scripts\\EnemyController.cs",
               "RelativeToolTip": "Assets\\Scripts\\EnemyController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAABQAAAAAAAAAAAAUwCoAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-20T22:24:27.105Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "PlayerController.cs",
-              "DocumentMoniker": "D:\\UnityProjects\\Survivor\\Assets\\Scripts\\PlayerController.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerController.cs",
-              "ToolTip": "D:\\UnityProjects\\Survivor\\Assets\\Scripts\\PlayerController.cs",
-              "RelativeToolTip": "Assets\\Scripts\\PlayerController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-20T22:13:05.092Z"
             }
           ]
         }

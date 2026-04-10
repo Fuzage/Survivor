@@ -8,10 +8,14 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D rb;
     private Vector2 moveInput;
+    private Animator animator;
+    private SpriteRenderer spriteRenderer;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
 
         rb.gravityScale = 0f;
         rb.freezeRotation = true;
@@ -31,8 +35,24 @@ public class PlayerController : MonoBehaviour
         }
 
         moveInput = input.normalized;
-    }
 
+        if (animator != null)
+        {
+            animator.SetBool("isMoving", moveInput != Vector2.zero);
+        }
+
+        if (spriteRenderer != null)
+        {
+            if (moveInput.x < 0)
+            {
+                spriteRenderer.flipX = true;
+            }
+            else if (moveInput.x > 0)
+            {
+                spriteRenderer.flipX = false;
+            }
+        }
+    }
     private void FixedUpdate()
     {
         if (moveInput == Vector2.zero)
