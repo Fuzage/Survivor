@@ -1,28 +1,52 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerPickup : MonoBehaviour
 {
     [SerializeField] private Transform player;
-    [SerializeField] private float pickupRadius = 1.5f;
 
+    private PlayerStats stats;
     private CircleCollider2D circleCollider;
 
     private void Awake()
     {
+        if (player != null)
+        {
+            stats = player.GetComponent<PlayerStats>();
+            if (stats == null)
+            {
+                stats = player.gameObject.AddComponent<PlayerStats>();
+            }
+        }
+        else
+        {
+            stats = GetComponent<PlayerStats>();
+            if (stats == null)
+            {
+                stats = gameObject.AddComponent<PlayerStats>();
+            }
+        }
+
         circleCollider = GetComponent<CircleCollider2D>();
         UpdatePickupRadius();
     }
 
     public void SetPickupRadius(float newRadius)
     {
-        pickupRadius = newRadius;
+        if (stats != null)
+        {
+            stats.pickupRange = newRadius;
+        }
+
         UpdatePickupRadius();
     }
 
     public void AddPickupRadius(float amount)
     {
-        pickupRadius += amount;
+        if (stats != null)
+        {
+            stats.pickupRange += amount;
+        }
+
         UpdatePickupRadius();
     }
 
@@ -30,8 +54,13 @@ public class PlayerPickup : MonoBehaviour
     {
         if (circleCollider != null)
         {
-            circleCollider.radius = pickupRadius;
+            circleCollider.radius = GetPickupRange();
         }
+    }
+
+    private float GetPickupRange()
+    {
+        return stats != null ? stats.pickupRange : 1.5f;
     }
 
     private void OnTriggerEnter2D(Collider2D other)

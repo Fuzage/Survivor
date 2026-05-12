@@ -254,6 +254,7 @@ GameObject:
   m_Component:
   - component: {fileID: 386635227}
   - component: {fileID: 386635226}
+  - component: {fileID: 386635228}
   m_Layer: 0
   m_Name: EnemySpawner
   m_TagString: Untagged
@@ -278,6 +279,8 @@ MonoBehaviour:
   spawnInterval: 1.5
   minSpawnDistance: 8
   maxSpawnDistance: 10
+  mapEdgePadding: 2
+  spawnAttempts: 20
 --- !u!4 &386635227
 Transform:
   m_ObjectHideFlags: 0
@@ -293,6 +296,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &386635228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 386635225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f94dd5512f94c2aa8439231400b4bf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyDifficultyManager
+  healthMultiplierPerMinute: 0.45
+  moveSpeedMultiplierPerMinute: 0.03
+  damageMultiplierPerMinute: 0.15
+  spawnRateMultiplierPerMinute: 0.45
+  pressureStartMinute: 8
+  pressureRampMinutes: 4
+  pressureHealthMultiplier: 4
+  pressureSpawnRateMultiplier: 2.5
+  pressureDamageMultiplier: 1.4
+  maxHealthTimeMultiplier: 18
+  maxMoveSpeedTimeMultiplier: 1.5
+  maxDamageTimeMultiplier: 4
+  maxSpawnRateTimeMultiplier: 8
+  minSpawnIntervalMultiplier: 0.08
+  relicHealthMultiplier: 1
+  relicMoveSpeedMultiplier: 1
+  relicDamageMultiplier: 1
+  relicSpawnRateMultiplier: 1
 --- !u!1 &468320281
 GameObject:
   m_ObjectHideFlags: 0
@@ -468,7 +501,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerPickup
   player: {fileID: 1337164336}
-  pickupRadius: 1.5
 --- !u!58 &514886223
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -657,6 +689,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CameraFollow
   target: {fileID: 1337164336}
   smoothTime: 0.08
+  clampToMapArea: 1
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -944,6 +977,8 @@ GameObject:
   - component: {fileID: 1337164341}
   - component: {fileID: 1337164342}
   - component: {fileID: 1337164343}
+  - component: {fileID: 1337164344}
+  - component: {fileID: 1337164345}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1038,7 +1073,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbcc131f7e37df44f80946083bad96a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  moveSpeed: 5
 --- !u!58 &1337164338
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1115,10 +1149,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerShooter
   bulletPrefab: {fileID: 8793661174467295614, guid: 9007d49518a452540b2ff1efed6b4b46, type: 3}
-  fireInterval: 0.7
-  damage: 1
-  attackRange: 6
-  bulletSpeed: 10
+  baseMoveSpeedForAttackBonus: 5
+  attackSpeedBonusPerMoveSpeed: 0.2
+  maxMoveSpeedAttackBonus: 1
 --- !u!114 &1337164341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1131,7 +1164,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c704a59269bba3418bc9d8c05a03716, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
-  maxHealth: 10
   invincibleTime: 1
   healthBarUI: {fileID: 2037388726}
 --- !u!114 &1337164342
@@ -1172,6 +1204,47 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1337164344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1337164334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ac9fd930ca944c4d81efaf4b6c8d761, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
+  maxHealth: 10
+  moveSpeed: 5
+  damage: 1
+  attackInterval: 0.7
+  attackRange: 6
+  bulletSpeed: 10
+  bulletSize: 1
+  projectileCount: 1
+  projectileSpread: 0
+  pierceCount: 0
+  critChance: 1
+  critMultiplier: 2
+  lifeStealChance: 1
+  pickupRange: 1.5
+--- !u!114 &1337164345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1337164334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed16c0dff1c94d119578ef9568f5ad2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UpgradeManager
+  choicesPerLevel: 3
+  panelSize: {x: 620, y: 260}
+  buttonSize: {x: 180, y: 170}
 --- !u!1 &1743430319
 GameObject:
   m_ObjectHideFlags: 0
@@ -1668,6 +1741,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2061542389}
   m_CullTransparentMesh: 1
+--- !u!1 &2100000100
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2100000101}
+  - component: {fileID: 2100000102}
+  m_Layer: 0
+  m_Name: MapArea
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2100000101
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2100000100}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2100000102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2100000100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44581d4ec49e4fe5989261eb6895dc8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MapArea
+  mapSize: {x: 120, y: 80}
+  wallThickness: 1
+  backgroundSpriteAsset: {fileID: 21300000, guid: 7231f2bc4f534decbccdcf7a5800e76a, type: 3}
+  backgroundSortingOrder: -100
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1678,3 +1799,4 @@ SceneRoots:
   - {fileID: 386635227}
   - {fileID: 1757442974}
   - {fileID: 468320284}
+  - {fileID: 2100000101}

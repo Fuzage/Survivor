@@ -4,8 +4,7 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 5f;
-
+    private PlayerStats stats;
     private Rigidbody2D rb;
     private Vector2 moveInput;
     private Animator animator;
@@ -13,6 +12,12 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+        stats = GetComponent<PlayerStats>();
+        if (stats == null)
+        {
+            stats = gameObject.AddComponent<PlayerStats>();
+        }
+
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -61,7 +66,12 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            rb.linearVelocity = moveInput * moveSpeed;
+            rb.linearVelocity = moveInput * GetMoveSpeed();
         }
+    }
+
+    private float GetMoveSpeed()
+    {
+        return stats != null ? stats.moveSpeed : 5f;
     }
 }

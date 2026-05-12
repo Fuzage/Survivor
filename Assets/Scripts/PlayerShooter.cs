@@ -3,14 +3,24 @@ using UnityEngine;
 public class PlayerShooter : MonoBehaviour
 {
     [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private float baseMoveSpeedForAttackBonus = 5f;
+    [SerializeField] private float attackSpeedBonusPerMoveSpeed = 0.2f;
+    [SerializeField] private float maxMoveSpeedAttackBonus = 1f;
 
-    [Header("Gun Settings")]
-    [SerializeField] private float fireInterval = 0.7f;
-    [SerializeField] private int damage = 1;
-    [SerializeField] private float attackRange = 6f;
-    [SerializeField] private float bulletSpeed = 10f;
-
+    private PlayerStats stats;
+    private PlayerHealth health;
     private float fireTimer;
+
+    private void Awake()
+    {
+        stats = GetComponent<PlayerStats>();
+        if (stats == null)
+        {
+            stats = gameObject.AddComponent<PlayerStats>();
+        }
+
+        health = GetComponent<PlayerHealth>();
+    }
 
     private void Update()
     {
@@ -22,25 +32,30 @@ public class PlayerShooter : MonoBehaviour
         if (nearestEnemy == null) return;
 
         Shoot(nearestEnemy);
-        fireTimer = fireInterval;
+        fireTimer = GetAttackInterval();
     }
 
     private Transform FindNearestEnemy()
     {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-
         Transform nearestEnemy = null;
-        float nearestDistance = Mathf.Infinity;
+        float nearestDistanceSqr = Mathf.Infinity;
+        float attackRange = GetAttackRange();
+        float attackRangeSqr = attackRange * attackRange;
+        Vector3 playerPosition = transform.position;
 
-        foreach (GameObject enemy in enemies)
+        for (int i = 0; i < EnemyRegistry.Count; i++)
         {
-            float distance = Vector2.Distance(transform.position, enemy.transform.position);
+            EnemyController enemy = EnemyRegistry.GetEnemy(i);
+            if (enemy == null || !enemy.isActiveAndEnabled) continue;
 
-            if (distance > attackRange) continue;
+            Vector3 offset = enemy.transform.position - playerPosition;
+            float distanceSqr = offset.sqrMagnitude;
 
-            if (distance < nearestDistance)
+            if (distanceSqr > attackRangeSqr) continue;
+
+            if (distanceSqr < nearestDistanceSqr)
             {
-                nearestDistance = distance;
+                nearestDistanceSqr = distanceSqr;
                 nearestEnemy = enemy.transform;
             }
         }
@@ -51,8 +66,23 @@ public class PlayerShooter : MonoBehaviour
     private void Shoot(Transform target)
     {
         Vector2 baseDirection = (target.position - transform.position).normalized;
+        int projectileCount = GetProjectileCount();
 
-        FireSingleBullet(baseDirection);
+        if (projectileCount <= 1)
+        {
+            FireSingleBullet(baseDirection);
+            return;
+        }
+
+        float spread = GetProjectileSpread();
+        float startAngle = -spread * (projectileCount - 1) * 0.5f;
+
+        for (int i = 0; i < projectileCount; i++)
+        {
+            float angle = startAngle + spread * i;
+            Vector2 direction = Quaternion.Euler(0f, 0f, angle) * baseDirection;
+            FireSingleBullet(direction);
+        }
     }
 
     private void FireSingleBullet(Vector2 direction)
@@ -68,7 +98,61 @@ public class PlayerShooter : MonoBehaviour
         Bullet bullet = bulletObject.GetComponent<Bullet>();
         if (bullet != null)
         {
-            bullet.Init(direction, damage, bulletSpeed, attackRange);
+            int damage = RollDamage(out bool isCriticalHit);
+            bullet.Init(direction, damage, GetBulletSpeed(), GetAttackRange(), isCriticalHit);
+            bullet.SetOwner(stats, health);
         }
+
+        bulletObject.transform.localScale *= GetBulletSize();
+    }
+
+    private int RollDamage(out bool isCriticalHit)
+    {
+        isCriticalHit = false;
+        int damage = stats != null ? stats.damage : 1;
+        if (stats != null && Random.value < stats.critChance)
+        {
+            isCriticalHit = true;
+            damage = Mathf.RoundToInt(damage * stats.critMultiplier);
+        }
+
+        return Mathf.Max(1, damage);
+    }
+
+    private float GetAttackInterval()
+    {
+        if (stats == null)
+        {
+            return 0.7f;
+        }
+
+        float extraMoveSpeed = Mathf.Max(0f, stats.moveSpeed - baseMoveSpeedForAttackBonus);
+        float attackSpeedBonus = Mathf.Min(maxMoveSpeedAttackBonus, extraMoveSpeed * attackSpeedBonusPerMoveSpeed);
+        return stats.attackInterval / (1f + attackSpeedBonus);
+    }
+
+    private float GetAttackRange()
+    {
+        return stats != null ? stats.attackRange : 6f;
+    }
+
+    private float GetBulletSpeed()
+    {
+        return stats != null ? stats.bulletSpeed : 10f;
+    }
+
+    private float GetBulletSize()
+    {
+        return stats != null ? stats.bulletSize : 1f;
+    }
+
+    private int GetProjectileCount()
+    {
+        return stats != null ? Mathf.Max(1, stats.projectileCount) : 1;
+    }
+
+    private float GetProjectileSpread()
+    {
+        return stats != null ? stats.projectileSpread : 0f;
     }
 }

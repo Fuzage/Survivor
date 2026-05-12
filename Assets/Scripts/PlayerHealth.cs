@@ -2,20 +2,29 @@
 
 public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField] private int maxHealth = 10;
     [SerializeField] private float invincibleTime = 0.5f;
     [SerializeField] private HealthBarUI healthBarUI;
 
+    private PlayerStats stats;
     private int currentHealth;
     private float invincibleTimer;
 
+    private void Awake()
+    {
+        stats = GetComponent<PlayerStats>();
+        if (stats == null)
+        {
+            stats = gameObject.AddComponent<PlayerStats>();
+        }
+    }
+
     private void Start()
     {
-        currentHealth = maxHealth;
+        currentHealth = GetMaxHealth();
 
         if (healthBarUI != null)
         {
-            healthBarUI.Initialize(maxHealth, currentHealth);
+            healthBarUI.Initialize(GetMaxHealth(), currentHealth);
         }
     }
 
@@ -60,18 +69,40 @@ public class PlayerHealth : MonoBehaviour
 
     public void IncreaseMaxHealth(int amount)
     {
-        maxHealth += amount;
+        if (stats != null)
+        {
+            stats.maxHealth += amount;
+        }
+
         currentHealth += amount;
 
-        // ✅ 防止超过最大值（以后会用到）
-        currentHealth = Mathf.Min(currentHealth, maxHealth);
+        currentHealth = Mathf.Min(currentHealth, GetMaxHealth());
 
         if (healthBarUI != null)
         {
-            healthBarUI.SetMaxHealth(maxHealth);
+            healthBarUI.SetMaxHealth(GetMaxHealth());
             healthBarUI.SetHealth(currentHealth);
         }
 
-        Debug.Log("Max HP increased to: " + maxHealth);
+        Debug.Log("Max HP increased to: " + GetMaxHealth());
+    }
+
+    public bool Heal(int amount)
+    {
+        if (amount <= 0 || currentHealth <= 0 || currentHealth >= GetMaxHealth()) return false;
+
+        currentHealth = Mathf.Min(currentHealth + amount, GetMaxHealth());
+
+        if (healthBarUI != null)
+        {
+            healthBarUI.SetHealth(currentHealth);
+        }
+
+        return true;
+    }
+
+    private int GetMaxHealth()
+    {
+        return stats != null ? stats.maxHealth : 10;
     }
 }

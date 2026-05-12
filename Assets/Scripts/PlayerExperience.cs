@@ -7,6 +7,17 @@ public class PlayerExperience : MonoBehaviour
     [SerializeField] private int expToNextLevel = 5;
     [SerializeField] private ExperienceUI experienceUI;
 
+    private UpgradeManager upgradeManager;
+
+    private void Awake()
+    {
+        upgradeManager = GetComponent<UpgradeManager>();
+        if (upgradeManager == null)
+        {
+            upgradeManager = gameObject.AddComponent<UpgradeManager>();
+        }
+    }
+
     private void Start()
     {
         RefreshUI();
@@ -43,11 +54,9 @@ public class PlayerExperience : MonoBehaviour
 
         Debug.Log("Level Up! Current Level: " + currentLevel);
 
-        // 👉 升级奖励：+1 最大血量
-        PlayerHealth playerHealth = GetComponent<PlayerHealth>();
-        if (playerHealth != null)
+        if (upgradeManager != null)
         {
-            playerHealth.IncreaseMaxHealth(1);
+            upgradeManager.ShowUpgradeChoices();
         }
     }
 }

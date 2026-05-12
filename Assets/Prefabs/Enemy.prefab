@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 4510725949726273246}
   - component: {fileID: 8956830311613690095}
   - component: {fileID: -5024170959825393325}
+  - component: {fileID: -5024170959825393326}
+  - component: {fileID: -5024170959825393327}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -85,8 +87,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 100001, guid: 11d405aa42fe43d2a4096d8337fdbd2a, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -134,7 +136,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19b4de74e9d34e349859d60c0e92c05c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyController
-  moveSpeed: 4
 --- !u!58 &8956830311613690095
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -183,5 +184,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b32e93c6745a24d4b9cae35e867393b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
-  maxHealth: 3
   expOrbPrefab: {fileID: 615795033580822344, guid: d499943362eced744a19a02877fd03dc, type: 3}
+--- !u!114 &-5024170959825393326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6320823800669348484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dd20516466249c1b959cf226212c850, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyStats
+  maxHealth: 3
+  moveSpeed: 4
+  contactDamage: 1
+--- !u!95 &-5024170959825393327
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6320823800669348484}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 09e90badcf564b72ac7a120492b90032, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
